@@ -6,7 +6,7 @@ namespace oblEnergo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("It's Laba6!");
         }
     }
 }
