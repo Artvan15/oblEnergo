@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oblEnergo", "oblEnergo\oblEnergo.csproj", "{48CFB573-70E1-49DB-835B-C40994E14557}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{7151AA77-0ED2-452D-AFC7-4289CC795900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{48CFB573-70E1-49DB-835B-C40994E14557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48CFB573-70E1-49DB-835B-C40994E14557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48CFB573-70E1-49DB-835B-C40994E14557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89038527-27B1-44FA-B7C9-9E4F0C6AFF29} = {7151AA77-0ED2-452D-AFC7-4289CC795900}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95E88605-1388-45A2-9183-DF58A8B44851}
