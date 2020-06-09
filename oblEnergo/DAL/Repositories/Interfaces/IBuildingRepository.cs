@@ -5,7 +5,7 @@ using DAL.Entities;
 
 namespace DAL.Repositories.Interfaces
 {
-    public interface IBuilding
+    public interface IBuildingRepository
         :IRepository<Building>
     {
     }

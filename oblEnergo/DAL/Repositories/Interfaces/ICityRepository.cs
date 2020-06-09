@@ -5,8 +5,8 @@ using DAL.Entities;
 
 namespace DAL.Repositories.Interfaces
 {
-    public interface IStreet
-        :IRepository<Street>
+    public interface ICityRepository
+        :IRepository<City>
     {
     }
 }

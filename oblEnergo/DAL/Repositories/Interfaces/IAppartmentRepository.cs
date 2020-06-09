@@ -5,8 +5,8 @@ using DAL.Entities;
 
 namespace DAL.Repositories.Interfaces
 {
-    public interface ICity
-        :IRepository<City>
+    public interface IAppartmentRepository
+        :IRepository<Appartment>
     {
     }
 }
