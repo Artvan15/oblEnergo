@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{7151
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.Tests", "DAL.Tests\DAL.Tests.csproj", "{0E73278D-9F61-4FA1-A441-92D041900DE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL.Tests", "DAL.Tests\DAL.Tests.csproj", "{0E73278D-9F61-4FA1-A441-92D041900DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,7 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{48CFB573-70E1-49DB-835B-C40994E14557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48CFB573-70E1-49DB-835B-C40994E14557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48CFB573-70E1-49DB-835B-C40994E14557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48CFB573-70E1-49DB-835B-C40994E14557}.Release|Any CPU.Build.0 = Release|Any CPU
 		{89038527-27B1-44FA-B7C9-9E4F0C6AFF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

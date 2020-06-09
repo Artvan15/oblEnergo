@@ -14,46 +14,35 @@ namespace DAL.Repositories.Impl
     {
         private readonly DbSet<T> _set;
         private readonly DbContext _context;
-​
         public BaseRepository(DbContext context)
         {
             _context = context;
             _set = context.Set<T>();
         }
-​
         public void Create(T item)
         {
             _set.Add(item);
         }
-​
+
         public void Delete(int id)
         {
             var item = Get(id);
             _set.Remove(item);
         }
-​
-        public IEnumerable<T> Find(
-            Func<T, bool> predicate,
-            int pageNumber = 0,
-            int pageSize = 10)
+        public IEnumerable<T> Find
+            (Func<T, bool> predicate, int pageNumber = 0, int pageSize = 10)
         {
             return
-                _set.Where(predicate)
-                    .Skip(pageSize * pageNumber)
-                    .Take(pageNumber)
-                    .ToList();
+                _set.Where(predicate).Skip(pageSize * pageNumber).Take(pageNumber).ToList();
         }
-​
         public T Get(int id)
         {
             return _set.Find(id);
         }
-​
         public IEnumerable<T> GetAll()
         {
             return _set.ToList();
         }
-​
         public void Update(T item)
         {
             _context.Entry(item).State = EntityState.Modified;
