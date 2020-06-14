@@ -13,5 +13,6 @@ namespace DAL.Entities
         //public List<Payment> payments { get; set; }
         public string Tariff { get; set; }
         public int BuildingId { get; }
+        public double UsedEnergy { get; set; }
     }
 }

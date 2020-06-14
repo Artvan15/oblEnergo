@@ -1,4 +1,5 @@
 ﻿using System;
+using DAL.Entities;
 
 namespace oblEnergo
 {
@@ -6,8 +7,15 @@ namespace oblEnergo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("It's Laba6!");
+            Director director = new Director();
+            BuildingBuilder builder = new BuildingType1Builder();
 
+            Building type1 = director.Create(builder);
+            Console.WriteLine(type1.Lifts[0].Power);
+
+            BuildingBuilder builder2 = new BuildingType2Builder();
+            Building type2 = director.Create(builder2);
+            Console.WriteLine(type2.BoilerRoom.Power);
         }
     }
 }

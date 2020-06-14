@@ -16,5 +16,6 @@ namespace CCL.Security
         {
             _user = user;
         }
+
     }
 }
