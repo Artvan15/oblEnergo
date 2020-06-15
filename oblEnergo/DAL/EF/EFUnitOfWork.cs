@@ -12,7 +12,7 @@ namespace DAL.EF
     public class EFUnitOfWork
         :IUnitOfWork
     {
-        private oblEnergoContext db;
+        private readonly oblEnergoContext db;
         private RegionRepository regionRepository;
         private CityRepository cityRepository;
         private StreetRepository streetRepository;
@@ -89,7 +89,6 @@ namespace DAL.EF
                 disposed = true;
             }
         }
-
         ~EFUnitOfWork()
         {
             Dispose(false);
