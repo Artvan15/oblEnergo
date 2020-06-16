@@ -7,6 +7,7 @@ namespace DAL.Entities
 {
     abstract public class Base
     {
+        public int Id { get; set; }
         public double Power { get; set; }
         public int UsedHours { get; set; }
         public virtual double CalcUsedEnergy()

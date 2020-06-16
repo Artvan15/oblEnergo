@@ -15,10 +15,10 @@ namespace DAL.EF
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Appartment> Appartments { get; set; }
 
-        public oblEnergoContext(DbContextOptions options)
+        public oblEnergoContext(DbContextOptions<oblEnergoContext> options)
             : base(options)
         {
-
+            Database.EnsureCreated();
         }
     }
 }

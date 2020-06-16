@@ -41,6 +41,24 @@ namespace BLL.Services.Impl
             return streetsDto;
         }
 
+        public IEnumerable<StreetDTO> GetAllStreets()
+        {
+            var user = SecurityContext.GetUser();
+            var userType = user.GetType();
+
+
+            if (userType != typeof(Administrator)
+                && userType != typeof(OblEnergoSpecialist))
+            {
+                throw new MethodAccessException();
+            }
+
+            var StreetsEntities = database.Streets.GetAll();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Street, StreetDTO>()).CreateMapper();
+            var streetsDto = mapper.Map<IEnumerable<Street>, List<StreetDTO>>(StreetsEntities);
+            return streetsDto;
+        }
+
         public void AddStreet(StreetDTO street)
         {
             var user = SecurityContext.GetUser();

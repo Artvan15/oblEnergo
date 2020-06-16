@@ -7,7 +7,7 @@ namespace DAL.Entities
     public class City : Parent1, IStreetNumerable
     {
         private List<Street> streets;
-        public int RegionId { get; }
+        public int RegionId { get; set; }
         public int Count
         {
             get { return streets.Count; }

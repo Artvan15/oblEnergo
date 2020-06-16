@@ -9,5 +9,6 @@ namespace BLL.Services.Interfaces
     {
         IEnumerable<RegionDTO> GetRegions(int page);
         void AddRegion(RegionDTO region);
+        IEnumerable<RegionDTO> GetAllRegions();
     }
 }

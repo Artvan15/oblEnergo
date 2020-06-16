@@ -11,5 +11,9 @@ namespace BLL.DTO
         public double UsedEnergy { get; set; }
         public List<AppartmentDTO> Appartments { get; set; }
         public int StreetId { get; }
+        public BuildingDTO(StreetDTO street)
+        {
+            StreetId = street.Id;
+        }
     }
 }

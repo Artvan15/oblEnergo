@@ -9,5 +9,6 @@ namespace BLL.Services.Interfaces
     {
         IEnumerable<StreetDTO> GetStreets(CityDTO city, int page);
         void AddStreet(StreetDTO street);
+        IEnumerable<StreetDTO> GetAllStreets();
     }
 }

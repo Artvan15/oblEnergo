@@ -61,6 +61,24 @@ namespace BLL.Services.Impl
             database.Regions.Create(regionEntity);
         }
 
+        public IEnumerable<RegionDTO> GetAllRegions()
+        {
+            var user = SecurityContext.GetUser();
+            var userType = user.GetType();
+
+
+            if (userType != typeof(Administrator)
+                && userType != typeof(OblEnergoSpecialist))
+            {
+                throw new MethodAccessException();
+            }
+
+            var RegionsEntities = database.Regions.GetAll();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Region, RegionDTO>()).CreateMapper();
+            var regionsDto = mapper.Map<IEnumerable<Region>, List<RegionDTO>>(RegionsEntities);
+            return regionsDto;
+        }
+
         private void validate(RegionDTO region)
         {
             if (string.IsNullOrEmpty(region.Name))

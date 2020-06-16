@@ -41,6 +41,24 @@ namespace BLL.Services.Impl
             return buildingsDto;
         }
 
+        public IEnumerable<BuildingDTO> GetAllBuildings()
+        {
+            var user = SecurityContext.GetUser();
+            var userType = user.GetType();
+
+
+            if (userType != typeof(Administrator)
+                && userType != typeof(OblEnergoSpecialist))
+            {
+                throw new MethodAccessException();
+            }
+
+            var BuildingsEntities = database.Buildings.GetAll();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Building, BuildingDTO>()).CreateMapper();
+            var buildingsDto = mapper.Map<IEnumerable<Building>, List<BuildingDTO>>(BuildingsEntities);
+            return buildingsDto;
+        }
+
         public void AddBuilding(BuildingDTO building)
         {
             var user = SecurityContext.GetUser();

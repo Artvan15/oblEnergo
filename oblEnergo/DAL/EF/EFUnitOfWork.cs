@@ -19,7 +19,7 @@ namespace DAL.EF
         private BuildingRepository buildingRepository;
         private AppartmentRepository appartmentRepository;
 
-        public EFUnitOfWork(DbContextOptions options)
+        public EFUnitOfWork(DbContextOptions<oblEnergoContext> options)
         {
             db = new oblEnergoContext(options);
         }

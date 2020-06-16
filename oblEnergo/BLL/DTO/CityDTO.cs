@@ -8,6 +8,10 @@ namespace BLL.DTO
     {
         public List<StreetDTO> Streets { get; set; }
         public int RegionId { get; }
+        public CityDTO(RegionDTO region)
+        {
+            RegionId = region.Id;
+        }
 
     }
 }

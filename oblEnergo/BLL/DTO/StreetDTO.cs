@@ -8,5 +8,9 @@ namespace BLL.DTO
     {
         public List<BuildingDTO> Buildings { get; set; }
         public int CityId { get; }
+        public StreetDTO(CityDTO city)
+        {
+            CityId = city.Id;
+        }
     }
 }

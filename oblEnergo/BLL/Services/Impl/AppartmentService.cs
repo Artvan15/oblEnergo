@@ -35,9 +35,44 @@ namespace BLL.Services.Impl
             }
 
             var AppartmentsEntities = database.Appartments.Find(z => z.BuildingId == building.Id, pageNumber, pageSize);
-
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Appartment, AppartmentDTO>()).CreateMapper();
             var appartmentsDto = mapper.Map<IEnumerable<Appartment>, List<AppartmentDTO>>(AppartmentsEntities);
+            return appartmentsDto;
+        }
+
+        public IEnumerable<AppartmentDTO> GetAllAppartments()
+        {
+            var user = SecurityContext.GetUser();
+            var userType = user.GetType();
+
+
+            if (userType != typeof(Administrator)
+                && userType != typeof(OblEnergoSpecialist))
+            {
+                throw new MethodAccessException();
+            }
+
+            var AppartmentsEntities = database.Appartments.GetAll();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Appartment, AppartmentDTO>()).CreateMapper();
+            var appartmentsDto = mapper.Map<IEnumerable<Appartment>, List<AppartmentDTO>>(AppartmentsEntities);
+            return appartmentsDto;
+        }
+
+        public AppartmentDTO GetAppartment(int Id)
+        {
+            var user = SecurityContext.GetUser();
+            var userType = user.GetType();
+
+
+            if (userType != typeof(Administrator)
+                && userType != typeof(OblEnergoSpecialist))
+            {
+                throw new MethodAccessException();
+            }
+
+            var AppartmentEntity = database.Appartments.Get(Id);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Appartment, AppartmentDTO>()).CreateMapper();
+            var appartmentsDto = mapper.Map<Appartment, AppartmentDTO>(AppartmentEntity);
             return appartmentsDto;
         }
 

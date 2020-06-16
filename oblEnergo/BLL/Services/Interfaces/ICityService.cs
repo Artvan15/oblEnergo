@@ -9,5 +9,6 @@ namespace BLL.Services.Interfaces
     {
         IEnumerable<CityDTO> GetCities(RegionDTO region, int page);
         void AddCity(CityDTO city);
+        IEnumerable<CityDTO> GetAllCities();
     }
 }

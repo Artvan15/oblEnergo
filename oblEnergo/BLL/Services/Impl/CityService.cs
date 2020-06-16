@@ -41,6 +41,24 @@ namespace BLL.Services.Impl
             return citiesDto;
         }
 
+        public IEnumerable<CityDTO> GetAllCities()
+        {
+            var user = SecurityContext.GetUser();
+            var userType = user.GetType();
+
+
+            if (userType != typeof(Administrator)
+                && userType != typeof(OblEnergoSpecialist))
+            {
+                throw new MethodAccessException();
+            }
+
+            var CitiesEntities = database.Cities.GetAll();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<City, CityDTO>()).CreateMapper();
+            var citiesDto = mapper.Map<IEnumerable<City>, List<CityDTO>>(CitiesEntities);
+            return citiesDto;
+        }
+
         public void AddCity(CityDTO city)
         {
             var user = SecurityContext.GetUser();

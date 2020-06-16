@@ -9,5 +9,7 @@ namespace BLL.Services.Interfaces
     {
         IEnumerable<AppartmentDTO> GetAppartments(BuildingDTO building, int page);
         void AddAppartment(AppartmentDTO appartment);
+        IEnumerable<AppartmentDTO> GetAllAppartments();
+        AppartmentDTO GetAppartment(int Id);
     }
 }
